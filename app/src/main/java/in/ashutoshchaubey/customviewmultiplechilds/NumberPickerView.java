@@ -82,14 +82,14 @@ public class NumberPickerView extends LinearLayout {
         if(upOrDown==1) {
             value += 1;
             valueText.setText(Integer.toString(value));
-            postInvalidate();
+//            postInvalidate();
         }else if(upOrDown==2){
             if(value==0 && onlyPositive==true){
                 valueText.setText(Integer.toString(value));
             }else{
                 value-=1;
                 valueText.setText(Integer.toString(value));
-                postInvalidate();
+//                postInvalidate();
             }
         }
 
