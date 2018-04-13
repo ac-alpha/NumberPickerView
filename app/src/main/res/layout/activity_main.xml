@@ -7,10 +7,9 @@
     android:orientation="horizontal"
     tools:context="in.ashutoshchaubey.customviewmultiplechilds.MainActivity">
 
-    <in.ashutoshchaubey.customviewmultiplechilds.NumberPickerView
-        android:id ="@+id/horizontal_number_picker"
-        android:layout_width ="wrap_content"
-        android:layout_height ="wrap_content"
-        app:onlyPositive="true"/>
+    <in.ashutoshchaubey.numberpickerlib.NumberIncDecView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:onlyPositive="false" />
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package in.ashutoshchaubey.customviewmultiplechilds;
+package in.ashutoshchaubey.numberpickerlib;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,42 +9,40 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 /**
- * Created by ashutoshchaubey on 12/04/18.
+ * Created by ashutoshchaubey on 13/04/18.
  */
 
-public class NumberPickerView extends LinearLayout {
+public class NumberIncDecView extends LinearLayout {
 
     Button plusButton, minusButton;
     public static boolean onlyPositive=true;
     public static int value = 0 ;
     EditText valueText;
 
-
-    public NumberPickerView(Context context) {
+    public NumberIncDecView(Context context) {
         super(context);
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.custom_view_multiple_childs, this,true);
         init(null);
     }
 
-    public NumberPickerView(Context context, @Nullable AttributeSet attrs) {
+    public NumberIncDecView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.custom_view_multiple_childs, this,true);
         init(attrs);
     }
 
-    public NumberPickerView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public NumberIncDecView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.custom_view_multiple_childs, this,true);
         init(attrs);
     }
 
-    public NumberPickerView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public NumberIncDecView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.custom_view_multiple_childs, this,true);
@@ -70,9 +68,9 @@ public class NumberPickerView extends LinearLayout {
         valueText=(EditText)findViewById(R.id.edit_text);
         valueText.setText(Integer.toString(value));
 
-        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.NumberPickerView);
+        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.NumberIncDecView);
 
-        onlyPositive=ta.getBoolean(R.styleable.NumberPickerView_onlyPositive,true);
+        onlyPositive=ta.getBoolean(R.styleable.NumberIncDecView_onlyPositive,true);
         ta.recycle();
 
     }
@@ -96,10 +94,11 @@ public class NumberPickerView extends LinearLayout {
     }
 
     public static void setValue(int value) {
-        NumberPickerView.value = value;
+        NumberIncDecView.value = value;
     }
 
     public static int getValue() {
         return value;
     }
+
 }
